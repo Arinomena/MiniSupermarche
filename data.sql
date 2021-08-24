@@ -6,6 +6,7 @@ create table Produit(
 	idCategorie varchar(3),
 	nomProduit varchar(50),
 	prixUnitaire decimal,
+	pathImage varchar(200),
 	foreign key (idCategorie) references Categorie(idCategorie)
 );
 create table Categorie(
