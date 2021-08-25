@@ -23,39 +23,50 @@ class Load extends Base_Controller {
 
 	}
 
-	/*public function Test_Login(){
+	public function Test_Login(){
 		$this->load->helper('assets');
-
-		$email = $this->input->post('email');
+		$this->load->model('Utilisateur');
+		$nom = $this->input->post('nomUtilisateur');
 		$mdp = $this->input->post('mdp');
-
-		if(){
-			$data['template'] = 'accueil.php';
-			$this->load->view('template',$data);
+		// $idUtilisateur=$this->utilisateur->getIdUtilisateur($nom);
+		$checking=$this->Utilisateur->loginUtilisateur($nom,$mdp);
+		if($checking==true)
+		{
+			// $this->session->set_userdata('idUtilisateur',$idUtilisateur);
+			// $idU=$this->session->userdata('idUtilisateur');
+			$data['template']='accueil.php';
+			$this->load->view('template_accueil',$data);
 		}else{
-			$data['template'] = 'login.php';
-			$this->load->view('template',$data);
-		}
-	}*/
-
-	
+			$data['template']='login.php';
+			$this->load->view('template_accueil',$data);
+		}		
+	}
 	public function template($page,$data){
 		
 		$data['template'] = $page.'.php';
 		$this->load->view('template',$data);
 	}
-	
-
-
-	/*public function Saisie(){
+	public function templateC($page,$data){
+		
+		$data['templateClient'] = $page.'.php';
+		$this->load->view('templateClient',$data);
+	}
+	public function Saisie(){
 
 		$this->load->model('produit');
 		$this->load->model('achat');
 		$caisse = $this->session->userdata('caisse');
 		$data['caisse'] = $caisse;
-		$data['liste_produit'] = $this->produit->get_All_Produit();
+		$data['liste_produit'] = $this->produit->getAllProduit();
 		$data['liste_achat'] = $this->achat->getAchat($caisse);
 		$this->template('saisie',$data);
+	}
+	public function Caisse_Essaie(){
+
+		$this->load->model('caisse');
+		$data['liste_caisse'] = $this->caisse->getAllCaisse();
+		$data['template'] = 'account.php';
+		$this->load->view('template',$data);
 	}
 	public function Valider_Commande(){
 
@@ -69,14 +80,17 @@ class Load extends Base_Controller {
 		$this->achat->insert_Achat($caisse,$idProduit,$quantite);
 
 		$data['caisse'] = $caisse;
-		$data['liste_produit'] = $this->produit->get_All_Produit();
+		$data['liste_produit'] = $this->produit->getAllProduit();
 		$data['liste_achat'] = $this->achat->getAchat($caisse);
 		$this->template('saisie',$data);
-	}*/
-
-
+	}
 	public function Changer_Caisse(){
 		$this->session->sess_destroy();
 		redirect(site_url());
+	}
+	public function Produit(){
+		$this->load->model('produit');
+		$data['liste_produit'] = $this->produit->getAllProduit();
+		$this->load->view('produit',$data);
 	}
 }

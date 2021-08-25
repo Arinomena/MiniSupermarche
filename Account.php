@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Base_Controller extends CI_Controller {
+require_once('Base_Controller.php');
+class Account extends Base_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,11 +21,16 @@ class Base_Controller extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 
-		if(!$this->session->has_userdata('caisse')){
-			redirect(site_url());
-		}
-
-		$this->load->helper('assets');
 	}
-	
+
+	public function index(){
+		$this->load->helper('assets');
+
+		$caisse = $this->session->userdata('caisse');
+		$data['caisse'] = $caisse;
+
+		$data['template'] = 'account.php';
+		$this->load->view('template',$data);
+		
+	}
 }

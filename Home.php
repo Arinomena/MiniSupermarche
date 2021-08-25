@@ -25,10 +25,13 @@ class Home extends CI_Controller {
 	public function index(){
 		$this->load->helper('assets');
 		$this->load->model('produit');
+		$this->load->model('caisse');
 		$data['liste_produit'] = $this->produit->getAllProduit();
-		
-		$data['templateClient'] = 'acceuilClient.php';
-		$this->load->view('templateClient',$data);
+		$data['liste_caisse'] = $this->caisse->getAllCaisse();
+		$caisse = $this->input->post('caisse');
+		$this->session->set_userdata('caisse',$caisse);
+		// $data['templateClient'] = 'acceuilClient.php';
+		$this->load->view('acceuilClient',$data);
 
 		
 		

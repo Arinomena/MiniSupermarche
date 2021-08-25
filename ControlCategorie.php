@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Base_Controller extends CI_Controller {
+class ControlCategorie extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,12 +20,18 @@ class Base_Controller extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
+	}
 
-		if(!$this->session->has_userdata('caisse')){
-			redirect(site_url());
-		}
-
+	public function index(){
 		$this->load->helper('assets');
+		$this->load->model('categorie');
+		$data['liste_categorie'] = $this->categorie->getAllCategorie();
+		
+		// $data['templateClient'] = 'acceuilClient.php';
+		$this->load->view('categorie',$data);
+
+		
+		
 	}
 	
 }

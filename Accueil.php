@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Base_Controller extends CI_Controller {
+class Accueil extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,12 +20,19 @@ class Base_Controller extends CI_Controller {
 	 */
 	public function __construct(){
 		parent::__construct();
-
-		if(!$this->session->has_userdata('caisse')){
-			redirect(site_url());
-		}
-
-		$this->load->helper('assets');
 	}
-	
+
+	public function index(){
+		$this->load->helper('assets');
+		$data['caisse'] = $this->session->userdata('caisse');
+		$data['template'] = 'login.php';
+		$this->load->view('template_accueil',$data);
+		
+	}
+	public function Choix_Caisse(){
+
+		$caisse = $this->input->post('caisse');
+		$this->session->set_userdata('caisse',$caisse);
+		redirect(site_url('Load/Saisie'));
+	}
 }
