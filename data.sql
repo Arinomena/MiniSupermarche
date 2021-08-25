@@ -30,23 +30,21 @@ create table utilisateur(
 	nomUtilisateur varchar(20),
 	mdp varchar(20)
 );
--- insert into caisse values(caisse,idproduit,quantite)
-
--- select Produit.designation as nomProduit, 
--- 	   Produit.prixUnitaire as prixUnitaire,
--- 	   Achat.quantite as quantite,
--- 	   (Produit.prixUnitaire*Achat.quantite) as montant
--- from Achat Join Produit on Achat.idProduit = Produit.idProduit where Achat.idCaisse = '1';
 
 create view allAchat as
-	select p.nomProduit as produit , c.nomCategorie as categorie , a.quantite as quatite , p.prixUnitaire as prixUnitaire , a.dateAchat as date
+	select a.idCaisse as caisse,p.nomProduit as produit , c.nomCategorie as categorie , a.quantite as quatite , p.prixUnitaire as prixUnitaire , a.dateAchat as date
 		from Achat a join Produit p on a.idProduit=p.idProduit join Categorie c on p.idCategorie=c.idCategorie;
  
-create view statCategorie as select count(produit),categorie,sum(quatite*prixUnitaire) from allAchat group by categorie;
+create view statCategorie as select categorie,sum(quatite),sum(quatite*prixUnitaire) from allAchat group by categorie;
+
+create view statCaisse as select caisse,sum(quatite),sum(quatite*prixUnitaire) from allAchat group by caisse;
+	
+create view statProduit as select produit,sum(quatite*prixUnitaire) from allAchat group by produit;
 
 insert into Categorie values('c1','Vetement et accessoire');
 insert into Categorie values('c2','Boucherie');
 insert into Categorie values('c3','Boisson');
+
 
 insert into Produit values('p1','c1','Nike',150000);
 insert into Produit values('p2','c2','Jambon',30000);
@@ -70,3 +68,14 @@ insert into caisse values('c03');
 
 insert into utilisateur values('u1','huhu','huhu');
 insert into utilisateur values('u2','hehe','hehe');
+
+insert into achat values('a1','p1',2,'2021-07-28');
+insert into achat values('a2','p1',1,'2021-08-20');
+insert into achat values('a3','p1',3,'2021-08-01');
+insert into achat values('a4','p1',2,'2021-08-04');
+insert into achat values('a5','p5',5,'2021-07-05');
+insert into achat values('a6','p5',3,'2021-07-06');
+insert into achat values('a7','p5',4,'2021-07-05');
+insert into achat values('a8','p12',5,'2021-07-05');
+insert into achat values('a9','p12',3,'2021-07-06');
+insert into achat values('a10','p12',4,'2021-07-05');
