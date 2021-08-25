@@ -38,8 +38,11 @@ create view allAchat as
 create view statCategorie as select categorie,sum(quatite),sum(quatite*prixUnitaire) from allAchat group by categorie;
 
 create view statCaisse as select caisse,sum(quatite),sum(quatite*prixUnitaire) from allAchat group by caisse;
-	
+
 create view statProduit as select produit,sum(quatite*prixUnitaire) from allAchat group by produit;
+
+create view produitDetail as select p.nomProduit as nomProduit,c.nomCategorie as nomCategorie,p.prixUnitaire as prixUnitaire,p.pathImage as pathImage
+ from Produit p join Categorie c on p.idCategorie=c.idCategorie;
 
 insert into Categorie values('c1','Vetement et accessoire');
 insert into Categorie values('c2','Boucherie');
