@@ -199,58 +199,51 @@
       </div>
   </header>
 
- 
-
-
-
-
-     
-     
-  
-  
-
-   <section id="fh5co-work" data-section="produits">
+  <section id="fh5co-home" data-section="home"  data-stellar-background-ratio="0.5">
+    <div class="gradient"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 section-heading text-center">
-          <h2 class="to-animate">Produits</h2>
+      <div class="text-wrap">
+        <div class="text-inner">
           <div class="row">
-            <div class="col-md-8 col-md-offset-2 subtext to-animate">
-              <h3>Des produits de qualité à prix compétitif pour satisfaire notre bien aimé clientelle et leur donner joie et bonheur tout au long de la journée</h3>
+            <div class="col-md-8 col-md-offset-2">
+              <h1 class="to-animate">Do something you love.</h1>
+              <h2 class="to-animate">Another free HTML5 bootstrap template by <a href="http://freehtml5.co/" target="_blank" title="Free HTML5 Bootstrap Templates">FREEHTML5.co</a> released under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons 3.0</a></h2>
             </div>
           </div>
         </div>
       </div>
-      <div class="row row-bottom-padded-sm">
-      <?php for ($i=0; $i < count($liste_produit) ; $i++) { ?>
-        <div class="col-md-4 col-sm-6 col-xxs-12">
-          <a class="fh5co-project-item  to-animate">
-            <img src="images/<?php echo $liste_produit[$i]['pathImage']; ?>" alt="Image" class="img-responsive">
-            <div class="fh5co-text">
-            <h2><?php echo $liste_produit[$i]['nomProduit']; ?></h2>
-            <span><?php echo $liste_produit[$i]['prixUnitaire']; ?> Ariary</span>
-            <div style="float: right;">
-            
-                <input type="number" name="quantite" min="0" max="1000" style="width: 50px; color: black; ">
-                <input type="button" value="Acheter" class="btn btn-primary" >
+    </div>
+    <div class="slant"></div>
+  </section>
 
-            </div>
-            </div>
-          </a>
+
+
+     
+     
+  
+  
+<section id="fh5co-intro">
+    <div class="container">
+      <div class="row row-bottom-padded-lg">        
+        <?php for ($i=0; $i < count($liste_categorie) ; $i++) { ?>
+        <div class="fh5co-block to-animate">
+          <div class="overlay-darker"></div>
+          <div class="overlay"></div>
+          <div class="fh5co-text">
+            <i class="fh5co-intro-icon icon-rocket"></i>
+           <h2><?php echo $liste_categorie[$i]['nomCategorie']; ?></h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p><a href="#" class="btn btn-primary">Why Us?</a></p>
+          </div>
         </div>
         <?php } ?>
-        
-      <div class="row">
-        <div class="col-md-12 text-center to-animate">
-          <p>* Demo images from <a href="http://plmd.me/" target="_blank">plmd.me</a></p>
-        </div>
-      </div>
+      </div>     
     </div>
   </section>
+  
     
 
-  
-  
+    
   
 
   
