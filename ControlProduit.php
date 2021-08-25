@@ -29,9 +29,19 @@ class ControlProduit extends CI_Controller {
 		
 		// $data['templateClient'] = 'acceuilClient.php';
 		$this->load->view('produit',$data);
-
-		
-		
+	
+	}
+	public function insertAchat(){
+		$this->load->model('produit');
+		$this->load->model('achat');
+		$nom=$this->input->get('nomP');		
+		$idCaisse = $this->session->userdata('caisse');
+		$quantite = $this->input->post('quantite');
+		$idP = $this->produit->getIdProduit($nom);
+		$this->achat->insertAchat($idCaisse,$idP,$quantite);
+		$data['liste_produit'] = $this->produit->getAllProduit();	
+		$this->load->view('produit',$data);
+	
 	}
 	
 }

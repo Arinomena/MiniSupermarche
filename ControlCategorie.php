@@ -34,4 +34,5 @@ class ControlCategorie extends CI_Controller {
 		
 	}
 	
+	
 }

@@ -93,4 +93,12 @@ class Load extends Base_Controller {
 		$data['liste_produit'] = $this->produit->getAllProduit();
 		$this->load->view('produit',$data);
 	}
+	// public function getCategorieByAjax($nomCategorie){
+	// 	$this->load->model('Categorie');
+	// 	$idCategorie= $this->Categorie->getSpecCategorie($categorie);
+
+	// 	$data['liste_produit']= $this->produit->getProduitParCategorie($idCategorie);
+	// 	echo json_encode($array);
+	// }
+
 }
