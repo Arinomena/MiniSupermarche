@@ -13,6 +13,14 @@ class Produit extends CI_Model{
 		}
 		return $produit;
 	}
+	public function getIdProduit($nomP){
+
+		$sql = "SELECT idProduit FROM Produit where nomProduit=%s";
+		$sql = sprintf($sql,$this->db->escape($nomP));
+		$query = $this->db->query($sql);
+		
+		return $query;
+	}
 	public function insertProduit($idProduit,$idCategorie,$nomProduit,$prixUnitaire){
 		$sql = "INSERT INTO Produit VALUES (%s,%s,%s,%s)";
 		$sql = sprintf($sql,$this->db->escape($idProduit),$this->db->escape($idCategorie),$this->db->escape($nomProduit),$this->db->escape($prixUnitaire));
@@ -23,10 +31,10 @@ class Produit extends CI_Model{
 		$sql = sprintf($sql,$this->db->escape($idCategorie),$this->db->escape($nomProduit),$this->db->escape($prixUnitaire),$this->db->escape($idProduit));
 		$this->db->query($sql);
 	}
-	public function deleteProduit($idProduit){
-		$sql = "DELETE FROM Produit where idProduit='%s'";
-		$sql = sprintf($sql,$this->db->escape($idProduit));
-		$this->db->query($sql);
+	public function deleteProduit($nom){
+		$sql = "DELETE FROM Produit where nomProduit='%s'";
+		$sql =$this->db->query($sql,$this->db->escape($nom));
+		
 	}
 }
 ?>
