@@ -6,23 +6,22 @@ class Categorie extends CI_Model{
 
 		$sql = 'SELECT * FROM Categorie';
 		$query = $this->db->query($sql);
-		$produit = array();
+		$categorie = array();
 		foreach ($query->result_array() as $key) {
-			$produit[] = $key;
+			$categoriet[] = $key;
 		}
-		return $produit;
+		return $categorie;
 	}
 
 	public function getSpecCategorie($nomCategorie){
 
-		$sql = 'SELECT * FROM Categorie where nomCategorie=%s';
+		$sql = "SELECT * FROM Categorie where nomCategorie='%s'";
 		$query = $this->db->query($sql,$this->db->escape($nomCategorie));
-		$produit = array();
+		$categorie = array();
 		foreach ($query->result_array() as $key) {
-			$produit[] = $key;
+			$categorie[] = $key;
 		}
-		return $produit;
+		return $categorie;
 	}
-}
 }
 ?>
