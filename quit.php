@@ -186,163 +186,43 @@
           <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
              <a class="navbar-brand" href="index.html">Mini Market</a> 
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li ><a href="<?php echo site_url('Home/index') ;?>"><span>Acceuil</span></a></li>
-                <li ><a href="<?php echo site_url('ControlProduit/index') ;?>"><span>Produit</span></a></li>
-                <li ><a href="<?php echo site_url('ControlCategorie/index') ;?>"><span>Categories</span></a></li>
-                <li ><a href="#"><span>Quitter</span></a></li>
-                <li ><a href="#"><span>Admin</span></a></li>
-              </ul>
-            </div>
+            
           </nav>
         <!-- </div> -->
       </div>
   </header>
 
-  <section id="fh5co-work" data-section="produits">
+ 
+ 
+  
+
+   <section id="fh5co-work" data-section="produits">
     <div class="container">
       <div class="row">
         <div class="col-md-12 section-heading text-center">
-          <h2 class="to-animate">Catégories</h2>
-          
-          </div>
-        </div>
-      </div>
-      
-    <div class="slant"></div>
-  </section>
-
-
-
-     <section id="fh5co-intro">
-    <div class="container">
-      <div class="row row-bottom-padded-lg">
-        <div class="fh5co-block to-animate">
-          <div class="overlay-darker"></div>
-          <div class="overlay"></div>
-          <div class="fh5co-text">
-            <i class="fh5co-intro-icon icon-bulb"></i>
-            <h2>Vêtement et Accessoire</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#" class="btn btn-primary">Voir</a></p>
-          </div>
-        </div>
-        <div class="fh5co-block to-animate">
-          <div class="overlay-darker"></div>
-          <div class="overlay"></div>
-          <div class="fh5co-text">
-            <i class="fh5co-intro-icon icon-wrench"></i>
-            <h2>Boucherie</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#" class="btn btn-primary">Voir</a></p>
-          </div>
-        </div>
-        <div class="fh5co-block to-animate">
-          <div class="overlay-darker"></div>
-          <div class="overlay"></div>
-          <div class="fh5co-text">
-            <i class="fh5co-intro-icon icon-rocket"></i>
-            <h2>Boisson</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            <p><a href="#" class="btn btn-primary">Voir</a></p>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-     
-     
-  
-  
-
-  
-    
-
-    
-  
-
-  
-  
-  <section id="fh5co-contact" data-section="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 section-heading text-center">
-          <h2 class="to-animate">Get In Touch</h2>
+          <h2 class="to-animate">A bientôt !</h2>
           <div class="row">
             <div class="col-md-8 col-md-offset-2 subtext to-animate">
-              <h3>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</h3>
+              
             </div>
           </div>
         </div>
       </div>
-      <div class="row row-bottom-padded-md">
-        <div class="col-md-6 to-animate">
-          <h3>Contact Info</h3>
-          <ul class="fh5co-contact-info">
-            <li class="fh5co-contact-address ">
-              <i class="icon-home"></i>
-              5555 Love Paradise 56 New Clity 5655, <br>Excel Tower United Kingdom
-            </li>
-            <li><i class="icon-phone"></i> (123) 465-6789</li>
-            <li><i class="icon-envelope"></i>info@freehtml5.co</li>
-            <li><i class="icon-globe"></i> <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-6 to-animate">
-          <h3>Contact Form</h3>
-          <div class="form-group ">
-            <label for="name" class="sr-only">Name</label>
-            <input id="name" class="form-control" placeholder="Name" type="text">
-          </div>
-          <div class="form-group ">
-            <label for="email" class="sr-only">Email</label>
-            <input id="email" class="form-control" placeholder="Email" type="email">
-          </div>
-          <div class="form-group ">
-            <label for="phone" class="sr-only">Phone</label>
-            <input id="phone" class="form-control" placeholder="Phone" type="text">
-          </div>
-          <div class="form-group ">
-            <label for="message" class="sr-only">Message</label>
-            <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-          </div>
-          <div class="form-group ">
-            <input class="btn btn-primary btn-lg" value="Send Message" type="submit">
-          </div>
-          </div>
-        </div>
-
+      <div class="row row-bottom-padded-sm">
+        
+     
+        
       </div>
     </div>
-    <div id="map" class="to-animate"></div>
   </section>
+    
+
   
   
   
+
   
-  <footer id="footer" role="contentinfo">
-    <a href="#" class="gotop js-gotop"><i class="icon-arrow-up2"></i></a>
-    <div class="container">
-      <div class="">
-        <div class="col-md-12 text-center">
-          <p>&copy; Elate Free HTML5. All Rights Reserved. <br>Created by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Images: <a href="http://pexels.com/" target="_blank">Pexels</a>, <a href="http://plmd.me/" target="_blank">plmd.me</a></p>
-          
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <ul class="social social-circle">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-youtube"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  
   
   
   <!-- jQuery -->

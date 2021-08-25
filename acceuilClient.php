@@ -189,29 +189,25 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li ><a href="<?php echo site_url('Home/index') ;?>"><span>Acceuil</span></a></li>
-                <li ><a href="<?php echo site_url('ControlProduit/index') ;?>"><span>Produit</span></a></li>
-                <li ><a href="<?php echo site_url('ControlCategorie/index') ;?>"><span>Categories</span></a></li>
                 <li ><a href="#"><span>Admin</span></a></li>
+                <li ><a href="#"><span>Quitter</span></a></li>
               </ul>
             </div>
           </nav>
         <!-- </div> -->
       </div>
   </header>
-
-  <section id="fh5co-home" data-section="home"  data-stellar-background-ratio="0.5">
-    <div class="gradient"></div>
+  
+   <section id="fh5co-work" data-section="produits">
     <div class="container">
-      <div class="text-wrap">
-        <div class="text-inner">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2" style="margin-top: -250px;">
-              <h1 class="to-animate">Vous devez choisir une caisse !</h1>
-              <div style="background-color: white; padding-bottom: 10px;padding-top: 10px; width: 400px; margin-left: 160px;">
-                  <h2 style="color: black;">Caisse</h2>
+      <div class="row">
+        <div class="col-md-12 section-heading text-center">
+          <h2 class="to-animate" >Vous devez choisir une caisse !</h2>
+              <div style="background-color: white; padding-bottom: 10px;padding-top: 10px; ">
+                  <h2 class="num" style="color: black; font-size: 40px;">Numéro Caisse</h2>
                   <form method="post" action="ControlProduit/index">
                     <p><select name="caisse" style="color: black;">
-                      <option >Num</option>
+                      
                        <?php for ($i=0; $i < count($liste_caisse) ; $i++) { ?>
                       <option value="<?php echo $liste_caisse[$i]['idCaisse']; ?>" ><?php echo $liste_caisse[$i]['idCaisse']; ?></option>
                       <?php } ?>
@@ -222,8 +218,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      
     <div class="slant"></div>
   </section>
 

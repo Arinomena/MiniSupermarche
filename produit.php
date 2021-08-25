@@ -191,7 +191,8 @@
                 <li ><a href="<?php echo site_url('Home/index') ;?>"><span>Acceuil</span></a></li>
                 <li ><a href="<?php echo site_url('ControlProduit/index') ;?>"><span>Produit</span></a></li>
                 <li ><a href="<?php echo site_url('ControlCategorie/index') ;?>"><span>Categories</span></a></li>
-                <li ><a href="#"><span>Admin</span></a></li>
+                <li ><a href="<?php echo site_url('ControlUtilisateur/index') ;?>"><span>Admin</span></a></li>
+                <li ><a href="#"><span>Quitter</span></a></li>
               </ul>
             </div>
           </nav>
@@ -200,13 +201,7 @@
   </header>
 
  
-
-
-
-
-     
-     
-  
+ 
   
 
    <section id="fh5co-work" data-section="produits">
@@ -222,28 +217,27 @@
         </div>
       </div>
       <div class="row row-bottom-padded-sm">
+        
       <?php for ($i=0; $i < count($liste_produit) ; $i++) { ?>
         <div class="col-md-4 col-sm-6 col-xxs-12">
-          <a class="fh5co-project-item  to-animate">
-            <img src="images/<?php echo $liste_produit[$i]['pathImage']; ?>" alt="Image" class="img-responsive">
+          <div class="fh5co-project-item  to-animate">
+            <img src="../assets/images/<?php echo $liste_produit[$i]['pathImage']; ?>" alt="Image" class="img-responsive" style="height:150px ;width:250px;">
             <div class="fh5co-text">
             <h2><?php echo $liste_produit[$i]['nomProduit']; ?></h2>
             <span><?php echo $liste_produit[$i]['prixUnitaire']; ?> Ariary</span>
+
             <div style="float: right;">
             
                 <input type="number" name="quantite" min="0" max="1000" style="width: 50px; color: black; ">
-                <input type="button" value="Acheter" class="btn btn-primary" >
+                <a href="../ControlProduit/insertAchat?nomP=<?php echo $liste_produit[$i]['nomProduit'];?> "><button class="btn btn-primary" >Acheter</button></a>
+         
+            </div>
 
             </div>
-            </div>
-          </a>
+          </div>
         </div>
         <?php } ?>
         
-      <div class="row">
-        <div class="col-md-12 text-center to-animate">
-          <p>* Demo images from <a href="http://plmd.me/" target="_blank">plmd.me</a></p>
-        </div>
       </div>
     </div>
   </section>
